@@ -1,5 +1,5 @@
 public class Ex2 {
-    public int maxZahl(int[] note) {
+    public static int maxZahl(int[] note) {
         int max = -10000;
         for (int number : note) {
             if (number > max) {
@@ -9,7 +9,7 @@ public class Ex2 {
         return max;
     }
 
-    public int minZahl(int[] note) {
+    public static int minZahl(int[] note) {
         int min = 10000000;
         for (int number : note) {
             if (number < min) {
@@ -19,7 +19,7 @@ public class Ex2 {
         return min;
     }
 
-    public int maximaleSumme(int[] note) {
+    public static int maximaleSumme(int[] note) {
         int sum = 0;
         int min = minZahl(note);
         for (int number : note) {
@@ -30,7 +30,7 @@ public class Ex2 {
         return sum;
     }
 
-    public int minimaleSumme(int[] note) {
+    public static int minimaleSumme(int[] note) {
         int sum = 0;
         int max = maxZahl(note);
         for (int number : note) {

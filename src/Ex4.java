@@ -30,4 +30,16 @@ public class Ex4 {
 
         return maxPrice;
     }
+
+    public int totalCostCalc(int[] keyboars, int[] usb, int budget) {
+        int bestCase = 0;
+        for (int keyboardPrice : keyboars) {
+            for (int usbPrice : usb) {
+                int total = keyboardPrice + usbPrice;
+                if (total <= budget && total > bestCase)
+                    bestCase = total;
+            }
+        }
+        return bestCase;
+    }
 }
