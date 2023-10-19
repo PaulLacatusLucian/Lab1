@@ -10,18 +10,41 @@ public class Test {
         ArrayList<Integer> expectedResult = new ArrayList<>();
         expectedResult.add(38);
         expectedResult.add(21);
-        int[] expectedResult2 = new int[]{87, 40, 40, 21, 80, 95};
+        int[] expectedResult2 = {87, 40, 40, 21, 80, 95};
+        int[] unexpectedResult = {80,50,34,21,50,32};
         int[] grades = {87, 38, 40, 21, 78, 93};
 
         assert Ex1.round(83) == 85;
         System.out.println("Rounding test passed!");
         assert Ex1.notEnough(grades) == expectedResult;
+
+        try {
+            assert Ex1.round(83) == 84;
+        } catch (AssertionError e) {
+            System.out.println("Test failed with an AssertionError!");
+        }
+
         System.out.println("1a. Test passed!");
         assert Ex1.average(grades) == 59.5;
+
+        try {
+            assert Arrays.equals(Ex1.afterRounding(grades),unexpectedResult);
+        } catch (AssertionError e) {
+            System.out.println("1b. Test failed with an AssertionError!");
+        }
+
         System.out.println("1b. Test passed!");
         assert Arrays.equals(Ex1.afterRounding(grades), expectedResult2);
+
+        try {
+            assert Ex1.maxGrade(grades) == 92;
+        } catch (AssertionError e) {
+            System.out.println("1c. Test failed with an AssertionError!");
+        }
+
         System.out.println("1c. Test passed!");
         assert Ex1.maxGrade(grades) == 95;
+
         System.out.println("1d. Test passed!");
 
         System.out.println("All ex1 tests passed!");
