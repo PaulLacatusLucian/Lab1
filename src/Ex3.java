@@ -70,7 +70,7 @@ public class Ex3 {
 //        return convert2Array(number/amount);
 //    }
 
-    public int[] addNumbers(int[] num1, int[] num2) {
+    public static int[] addNumbers(int[] num1, int[] num2) {
         int[] newNumber = new int[num1.length];
         int rest = 0;
 
@@ -96,8 +96,8 @@ public class Ex3 {
         }
     }
 
-    public ArrayList<Integer> subtractNumbers(int[] num1, int[] num2) {
-        ArrayList<Integer> newNumber = new ArrayList<Integer>();
+    public static ArrayList<Integer> subtractNumbers(int[] num1, int[] num2) {
+        ArrayList<Integer> newNumber = new ArrayList<>();
         int lent = 0;
 
         for (int i = num1.length - 1; i >= 0; i--) {
@@ -112,8 +112,8 @@ public class Ex3 {
         return newNumber;
     }
 
-    public ArrayList<Integer> multiply(int[] num1, int amount) {
-        ArrayList<Integer> newNumber = new ArrayList<Integer>();
+    public static ArrayList<Integer> multiply(int[] num1, int amount) {
+        ArrayList<Integer> newNumber = new ArrayList<>();
         int rest = 0;
         for (int i = num1.length - 1; i >= 0; i--) {
             int newDigit = num1[i] * amount + rest;
@@ -124,6 +124,23 @@ public class Ex3 {
                 rest = 0;
             newNumber.add(0, newDigit);
         }
+        if (rest > 0)
+            newNumber.add(0, rest);
+        return newNumber;
+    }
+
+    public static ArrayList<Integer> division(int[] num1, int amount) {
+        ArrayList<Integer> newNumber = new ArrayList<>();
+        int lent = 0;
+
+        for (int i = 0; i < num1.length; i++) {
+            int result = (num1[i] + lent * 10) / amount;
+            lent = (num1[i] + lent * 10) % amount;
+            newNumber.add(result);
+        }
+        while (newNumber.size() > 1 && newNumber.get(0) == 0)
+            newNumber.remove(0);
+
         return newNumber;
     }
 }

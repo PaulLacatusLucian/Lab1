@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import static java.lang.Math.abs;
 
 public class Ex1 {
-    public int round(int number) {
+    public static int round(int number) {
         int nextMumber = (number / 5 + 1) * 5;
         if (number < 38)
             return number;
@@ -12,7 +12,7 @@ public class Ex1 {
         return number;
     }
 
-    public ArrayList<Integer> notEnough(int[] grades) {
+    public static ArrayList<Integer> notEnough(int[] grades) {
         ArrayList<Integer> failed = new ArrayList<>();
         for (int grade : grades)
             if (grade < 40)
@@ -20,7 +20,7 @@ public class Ex1 {
         return failed;
     }
 
-    public double average(int[] grades) {
+    public static double average(int[] grades) {
         int sum = 0;
         int count = 0;
         for (int grade : grades) {
@@ -30,13 +30,13 @@ public class Ex1 {
         return (double) sum / count;
     }
 
-    public int[] afterRounding(int[] grades) {
+    public static int[] afterRounding(int[] grades) {
         for (int index = 0; index < grades.length; index++)
             grades[index] = round(grades[index]);
         return grades;
     }
 
-    public int maxGrade(int[] grades) {
+    public static int maxGrade(int[] grades) {
         grades = afterRounding(grades);
         int max = 0;
         for (int grade:grades)
