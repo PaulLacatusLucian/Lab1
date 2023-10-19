@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Ex4 {
-    public int cheapestKeyboard(int[] keyboards) {
+    public static int cheapestKeyboard(int[] keyboards) {
         int minPrice = 10000;
         for (int price : keyboards)
             if (price < minPrice)
@@ -9,7 +9,7 @@ public class Ex4 {
         return minPrice;
     }
 
-    public int mostExpesiveDevice(int[] keyboards, int[] usb) {
+    public static int mostExpesiveDevice(int[] keyboards, int[] usb) {
         int maxPrice = 0;
         for (int priceKeyboars : keyboards)
             if (priceKeyboars > maxPrice)
@@ -22,7 +22,7 @@ public class Ex4 {
         return maxPrice;
     }
 
-    public int affordedKeyboard(int[] keyboards, int budget) {
+    public static int affordedKeyboard(int[] keyboards, int budget) {
         int maxPrice = 0;
         for (int priceKeyboars : keyboards)
             if (priceKeyboars > maxPrice && priceKeyboars <= budget)
@@ -31,7 +31,7 @@ public class Ex4 {
         return maxPrice;
     }
 
-    public int totalCostCalc(int[] keyboars, int[] usb, int budget) {
+    public static int totalCostCalc(int[] keyboars, int[] usb, int budget) {
         int bestCase = 0;
         for (int keyboardPrice : keyboars) {
             for (int usbPrice : usb) {

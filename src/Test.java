@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -45,6 +46,8 @@ public class Test {
     }
 
     public static void testEx3() {
+        System.out.println("Testing ex3");
+        System.out.println();
         int[] num1 = {1, 0, 9};
         int[] num2 = {1, 0, 8};
         int amount = 9;
@@ -55,6 +58,7 @@ public class Test {
         expectedDif.add(1); expectedDif.add(2);
         ArrayList<Integer> expectedMul = new ArrayList<>();
         expectedMul.add(9); expectedMul.add(8); expectedMul.add(1);
+
         assert Ex3.addNumbers(num1, num2) == expectedSum;
         System.out.println("3a. Test add!");
         assert Ex3.subtractNumbers(num1, num2).equals(expectedDif);
@@ -68,11 +72,31 @@ public class Test {
         System.out.println();
     }
 
+    public static void testEx4() {
+        System.out.println("Testing ex4");
+        System.out.println();
+        int[] keyboars = {40, 50, 60};
+        int[] usb = {8,12};
+
+        assert Ex4.cheapestKeyboard(keyboars) == 40;
+        System.out.println("4a. Test passed!");
+        assert Ex4.mostExpesiveDevice(keyboars, usb) == 60;
+        System.out.println("4b. Test passed!");
+        assert Ex4.affordedKeyboard(keyboars, 50) == 50;
+        System.out.println("4c. Test passed!");
+        assert Ex4.totalCostCalc(keyboars,usb,60) == 58;
+        System.out.println("4d. Test passed!");
+
+        System.out.println("All ex4 tests passed!");
+        System.out.println();
+    }
+
 
     public static void testAll() {
         testEx1();
         testEx2();
         testEx3();
+        testEx4();
     }
 
 }

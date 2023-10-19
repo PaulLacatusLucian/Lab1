@@ -109,6 +109,10 @@ public class Ex3 {
                 lent = 0;
             newNumber.add(0, diff);
         }
+
+        while (newNumber.size() > 1 && newNumber.get(0) == 0)
+            newNumber.remove(0);
+
         return newNumber;
     }
 
