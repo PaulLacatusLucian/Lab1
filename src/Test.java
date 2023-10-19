@@ -24,6 +24,7 @@ public class Test {
         System.out.println("1d. Test passed!");
 
         System.out.println("All ex1 tests passed!");
+        System.out.println();
     }
 
     public static void testEx2() {
@@ -40,22 +41,38 @@ public class Test {
         System.out.println("2d. Test passed!");
 
         System.out.println("All ex2 tests passed!");
+        System.out.println();
     }
 
     public static void testEx3() {
         int[] num1 = {1, 0, 9};
         int[] num2 = {1, 0, 8};
         int amount = 9;
-        System.out.println(Arrays.toString(Ex3.addNumbers(num1, num2)));
-        System.out.println(Ex3.subtractNumbers(num1, num2));
-        System.out.println(Ex3.division(num2, 9));
+        int[] expectedSum = {2,1,7};
+        ArrayList<Integer> expectedDif = new ArrayList<>();
+        expectedDif.add(1);
+        ArrayList<Integer> expectedDiv = new ArrayList<>();
+        expectedDif.add(1); expectedDif.add(2);
+        ArrayList<Integer> expectedMul = new ArrayList<>();
+        expectedMul.add(9); expectedMul.add(8); expectedMul.add(1);
+        assert Ex3.addNumbers(num1, num2) == expectedSum;
+        System.out.println("3a. Test add!");
+        assert Ex3.subtractNumbers(num1, num2).equals(expectedDif);
+        System.out.println("3b. Test subtract!");
+        assert Ex3.division(num2, 9).equals(expectedDiv);
+        System.out.println("3c. Test division!");
+        assert Ex3.multiply(num1, 9).equals(expectedMul);
+        System.out.println("3d. Test multiply!");
+
+        System.out.println("All ex3 tests passed!");
+        System.out.println();
     }
 
-}
 
     public static void testAll() {
         testEx1();
         testEx2();
         testEx3();
     }
+
 }
