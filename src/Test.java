@@ -7,8 +7,8 @@ public class Test {
     public static void testEx1() {
         System.out.println("Testing ex1");
         System.out.println();
-        ArrayList<Integer> expectedResult = new ArrayList<>();
-        ArrayList<Integer> unexpectedResult1 = new ArrayList<>();
+        ArrayList<Integer> expectedResult = new ArrayList<Integer>();
+        ArrayList<Integer> unexpectedResult1 = new ArrayList<Integer>();
         unexpectedResult1.add(23);
         expectedResult.add(38);
         expectedResult.add(21);
@@ -25,9 +25,9 @@ public class Test {
             System.out.println("Rounding test failed with an AssertionError!");
         }
 
-
-        assert Ex1.notEnough(grades) == expectedResult;
+        assert Ex1.notEnough(grades).equals(expectedResult);
         System.out.println("1a. Test passed!");
+
 
         try {
             assert  Ex1.notEnough(grades) == unexpectedResult1;
@@ -130,8 +130,8 @@ public class Test {
         expectedDif.add(1);
         ArrayList<Integer> unexpectedDif = new ArrayList<>();
         unexpectedDif.add(7);
-        ArrayList<Integer> expectedDiv = new ArrayList<>();
-        expectedDif.add(1); expectedDif.add(2);
+        ArrayList<Integer> expectedDiv1 = new ArrayList<>();
+        expectedDiv1.add(1); expectedDiv1.add(2);
         ArrayList<Integer> unexpectedDiv = new ArrayList<>();
         unexpectedDif.add(1); unexpectedDif.add(4);
         ArrayList<Integer> expectedMul = new ArrayList<>();
@@ -139,7 +139,8 @@ public class Test {
         ArrayList<Integer> unexpectedMul = new ArrayList<>();
         unexpectedMul.add(9); unexpectedMul.add(7); unexpectedMul.add(1);
 
-        assert Ex3.addNumbers(num1, num2) == expectedSum;
+
+        assert Arrays.equals(Ex3.addNumbers(num1, num2),expectedSum);
         System.out.println("3a. Test add!");
 
         try {
@@ -147,7 +148,6 @@ public class Test {
         } catch (AssertionError e) {
             System.out.println("3a failed with an AssertionError!");
         }
-
 
         assert Ex3.subtractNumbers(num1, num2).equals(expectedDif);
         System.out.println("3b. Test subtract!");
@@ -159,7 +159,7 @@ public class Test {
         }
 
 
-        assert Ex3.division(num2, 9).equals(expectedDiv);
+        assert Ex3.division(num2, 9).equals(expectedDiv1);
         System.out.println("3c. Test division!");
 
         try {
